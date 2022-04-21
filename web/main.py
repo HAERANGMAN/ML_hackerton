@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
+from flask_migrate import Migrate
 
 app = Flask(__name__)
+migrate = Migrate(app, db)
 app.secret_key = 'super secret key'
 
 @app.route('/')
